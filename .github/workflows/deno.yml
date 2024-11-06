@@ -30,6 +30,6 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "<your-project-name>"
-          entrypoint: "main.ts"
+          entrypoint: "src/main.js"
           root: "."
 
