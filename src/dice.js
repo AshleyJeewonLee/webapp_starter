@@ -17,19 +17,26 @@ const router = new Router()
 // Configure a cutom route
 // This function will run when "/api/test" is requested
 router.get("/api/test", (ctx) => {
-  console.log("someone made a request to /api/test")
-  ctx.response.headers.set("Access-Control-Allow-Origin", "http://127.0.0.1:5500")
-  ctx.response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-  ctx.response.headers.set("Access-Control-Allow-Headers", "Content-Type")
-  // output some info about the request
-  console.log("ctx.request.url.pathname:", ctx.request.url.pathname)
-  console.log("myParam:", ctx.request.url.searchParams.get("myParam"))
-  console.log("ctx.request.method:", ctx.request.method)
+    console.log("someone made a request to /api/test")
+    ctx.response.headers.set("Access-Control-Allow-Origin", "http://127.0.0.1:5500")
+    ctx.response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+    ctx.response.headers.set("Access-Control-Allow-Headers", "Content-Type")
 
-  // send a response back to the browser
-  ctx.response.body = "This is a test. Now try again"
+    // send a response back to the browser
+    ctx.response.body = Math.floor(Math.random() * 6) + 1
 })
 
+router.get("/api/d6", (ctx) => {
+    console.log("someone made a request to /api/d6")
+    ctx.response.headers.set("Access-Control-Allow-Origin", "http://127.0.0.1:5500")
+    ctx.response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+    ctx.response.headers.set("Access-Control-Allow-Headers", "Content-Type")
+    // output some info about the request
+    const randomNumber = Math.floor(Math.random() * 6) + 1
+
+    // send a response back to the browser
+    ctx.response.body = randomNumber
+})
 // Tell the app to use the router
 app.use(router.routes())
 app.use(router.allowedMethods())

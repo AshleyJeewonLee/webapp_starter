@@ -277,3 +277,21 @@
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
+
+#send {
+    display: block;
+    width: 100%;
+    padding: 14px 24px;
+    margin-top: 24px;
+    background: linear-gradient(to right, #4299e1, #667eea);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 6px -1px rgba(66, 153, 225, 0.2);
+}

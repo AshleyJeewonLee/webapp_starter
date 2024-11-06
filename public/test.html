@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello, Web!</title>
@@ -13,7 +14,7 @@
     <script>
       const sendElement = document.getElementById("send");
       sendElement.addEventListener("click", () => {
-        fetch(`/api/test`)
+        fetch(`http://localhost:8000/api/test`)
           .then((response) => response.text())
           .then((responseText) => {
             const responseElement = document.getElementById("response");
